@@ -8,13 +8,17 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = QT-Server
+TARGET = lab4
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    bcm2835_stub.cpp \
+    pin.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    bcm2835.h \
+    pin.h
 
 FORMS    += mainwindow.ui

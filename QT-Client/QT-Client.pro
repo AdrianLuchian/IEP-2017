@@ -4,17 +4,24 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core
+QT -= gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += c++11
 
-TARGET = QT-Client
+TARGET = lab_PWM
+CONFIG += console
+CONFIG -= app_bundle
+
 TEMPLATE = app
 
+SOURCES += \
+    pwm.cpp \
+    bcm2835_stub.cpp \
+    pwm_class.cpp \
+    pin.cpp
 
-SOURCES += main.cpp\
-        mainwindow.cpp
-
-HEADERS  += mainwindow.h
-
-FORMS    += mainwindow.ui
+HEADERS += \
+    bcm2835.h \
+    pwm_class.h \
+    pin.h
